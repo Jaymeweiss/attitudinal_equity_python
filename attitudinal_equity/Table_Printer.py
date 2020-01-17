@@ -8,7 +8,7 @@ brand_names = ['Facebook', 'Twitter', 'Google Plus', 'Linked In', 'Tumblr', 'Ins
 def print_attitudinal_equity_table(responses, number_of_responses):
     table = []
     print('Attitudinal Equity')
-    headers = ['Response'] + brand_names
+    headers = ['Response'] + brand_names + ['Total']
 
     for x in range(number_of_responses):
         response = responses[x]
