@@ -1,4 +1,4 @@
-s_values = [0, 2.33, 1.69, 1.32, 0.88]
+s_values = (0, 2.33, 1.69, 1.32, 0.88)
 
 
 def s_value(number_of_brands_rated):
