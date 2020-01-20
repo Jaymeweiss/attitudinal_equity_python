@@ -6,9 +6,6 @@ from attitudinal_equity.Brand_ranking import rank_brands
 from attitudinal_equity.Response import Response
 from attitudinal_equity.S import s_value
 
-DEFAULT_RANKING = 0
-DEFAULT_AE = 0
-
 
 def read_data():
     with open('./attitudinal_equity/survey_data_original.csv', mode='r') as csv_file:
@@ -18,17 +15,17 @@ def read_data():
         for row in csv_reader:
             ratings = []
             if row["Facebook:performance_rating"] != '':
-                ratings.append(Brand('Facebook', int(row["Facebook:performance_rating"]), DEFAULT_RANKING, DEFAULT_AE, 0))
+                ratings.append(Brand('Facebook', int(row["Facebook:performance_rating"]), 0))
             if row["Twitter:performance_rating"] != '':
-                ratings.append(Brand('Twitter', int(row["Twitter:performance_rating"]), DEFAULT_RANKING, DEFAULT_AE, 1))
+                ratings.append(Brand('Twitter', int(row["Twitter:performance_rating"]), 1))
             if row["Google+:performance_rating"] != '':
-                ratings.append(Brand('Google Plus', int(row["Google+:performance_rating"]), DEFAULT_RANKING, DEFAULT_AE, 2))
+                ratings.append(Brand('Google Plus', int(row["Google+:performance_rating"]), 2))
             if row["LinkedIn:performance_rating"] != '':
-                ratings.append(Brand('Linked In', int(row["LinkedIn:performance_rating"]), DEFAULT_RANKING, DEFAULT_AE, 3))
+                ratings.append(Brand('Linked In', int(row["LinkedIn:performance_rating"]), 3))
             if row["Tumblr:performance_rating"] != '':
-                ratings.append(Brand('Tumblr', int(row["Tumblr:performance_rating"]), DEFAULT_RANKING, DEFAULT_AE, 4))
+                ratings.append(Brand('Tumblr', int(row["Tumblr:performance_rating"]), 4))
             if row["Instagram:performance_rating"] != '':
-                ratings.append(Brand('Instagram', int(row["Instagram:performance_rating"]), DEFAULT_RANKING, DEFAULT_AE, 5))
+                ratings.append(Brand('Instagram', int(row["Instagram:performance_rating"]), 5))
 
             if len(ratings) > 0:
                 value_for_s = s_value(len(ratings))
