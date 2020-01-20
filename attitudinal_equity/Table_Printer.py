@@ -2,10 +2,8 @@ from tabulate import tabulate
 
 from attitudinal_equity.AE_calculations import calculate_total_ae_for_brand
 
-brand_names = ['Facebook', 'Twitter', 'Google Plus', 'Linked In', 'Tumblr', 'Instagram']
 
-
-def print_attitudinal_equity_table(responses, number_of_responses):
+def print_attitudinal_equity_table(responses, number_of_responses, brand_names):
     table = []
     print('Attitudinal Equity')
     headers = ['Response'] + brand_names + ['Total']
@@ -35,7 +33,7 @@ def print_attitudinal_equity_table(responses, number_of_responses):
     print(tabulate(table, headers))
 
 
-def print_total_brand_level_ae(responses):
+def print_total_brand_level_ae(responses, brand_names):
     total_brand_level_ae = 0
     for brand_name in brand_names:
         brand_ae = calculate_total_ae_for_brand(brand_name, responses, 10000)
