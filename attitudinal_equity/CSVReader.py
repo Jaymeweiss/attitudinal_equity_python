@@ -18,7 +18,7 @@ def read_data(column_names):
             for column_name in column_names:
                 if row[f'{column_name}:performance_rating'] != '':
                     ratings.append(Brand(column_name, int(row[f'{column_name}:performance_rating']), index))
-                    index += 1
+                index += 1
 
             if len(ratings) > 0:
                 value_for_s = s_value(len(ratings))
