@@ -14,11 +14,9 @@ def read_data(column_names):
         responses = []
         for row in csv_reader:
             ratings = []
-            index = 0
-            for column_name in column_names:
+            for index, column_name in enumerate(column_names):
                 if row[f'{column_name}:performance_rating'] != '':
                     ratings.append(Brand(column_name, int(row[f'{column_name}:performance_rating']), index))
-                index += 1
 
             if len(ratings) > 0:
                 value_for_s = s_value(len(ratings))
